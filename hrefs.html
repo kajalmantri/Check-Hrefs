@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+ <input type="button" id="checkUrl" value="Check URL">
+        <input type="button" id="addLink" value="Add link" disabled><br>
+        <div id="linkList">
+        <a class="link" href="http://www.w3schools.com/jsref/prop_radio_checked.asp">w3school</a>
+        <a class="link" href="http://www.asa.edu/">ASA colleg</a>
+        <a class="link" href="https://www.youtube.com/">youtube</a>
+        <a class="link" href="http://www.google.com">Bronx school</a>
+        <a class="link" href="http://www.truman.edu/">Truman state university</a>
+        </div>
+        <span id="display"></span>	
+
+	<script>
+	var id = function _id(id){
+return document.getElementById(id);
+	}	
+var checkUrl= id("checkUrl");
+var addLink = id("addLink");
+var display =id("display");
+var links=document.getElementsByClassName("link");
+//var links=document.querySelectorAll("link");
+//var link=document.getQuerySelector("link");
+var proTek="http://www.pro-tekconsulting.com";
+checkUrl.addEventListener('click',function(){
+	var newLink="";
+
+for(i=0;i<links.length;i++){
+	if(links[i].href == proTek){
+		console.log("proTek ,exists in the links");
+		console.log(link[i]);
+		addLink.disabled =true;
+		break;
+	}
+	else{
+		console.log("link doesn't exists.");
+		addLink.disabled =false;
+	}
+}
+});
+addLink.addEventListener("click",function showText(){
+	display.innerHTML = proTek;
+});
+//This is another way of writing addEventListener
+// addLink.addEventListener('click',showText);
+// function showText(){
+// 	display.innerHTML = proTek;
+
+// }
+
+	</script>
+
+</body>
+</html>
